@@ -41,7 +41,6 @@ Board.belongsTo(User, {
 })
 
 
-
 sequelize.sync({
     alter: true
 })
