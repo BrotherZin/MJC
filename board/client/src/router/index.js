@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Join from "../views/Join.vue"
+import Join from "../views/join.vue"
 import BoardList from "../views/board/list.vue"
 import BoardWrite from "../views/board/write.vue"
 import BoardItem from "../views/board/item.vue"
 import BoardModify from "../views/board/modify.vue"
 
 Vue.use(VueRouter)
+
 const routes = [
   {
     path: '/',
@@ -15,10 +16,9 @@ const routes = [
     component: HomeView
   },
   {
-    path: "/join",
+    path: '/join',
     component: Join
-  },
-  {
+  }, {
     path: "/board",
     component: BoardList
   },
@@ -34,7 +34,6 @@ const routes = [
     path: "/board/modify/:id",
     component: BoardModify
   }
-
 
 ]
 

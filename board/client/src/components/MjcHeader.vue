@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <v-layout>
-      <div class="logo" @click="moveMain">Mjc Board</div>
+      <div class="logo" @click="moveMain">Mjc 게시판</div>
       <v-spacer></v-spacer>
-      <div>진용화</div>
+      <div>안형진</div>
     </v-layout>
   </div>
 </template>

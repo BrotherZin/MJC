@@ -47,8 +47,6 @@ router.post("/login", async function (req, res) {
   res.json({
     result: "ok"
   })
-
-
 })
 
 module.exports = router;

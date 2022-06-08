@@ -66,14 +66,14 @@ export default {
   },
   mounted() {
     //TODO : 서버에서 게시물 목록 가져와서 넣기
-    // for (var i = 0; i < 10; i++) {
-    //   this.boardList.push({
-    //     id: i,
-    //     title: "제목" + i,
-    //     writer: "작성자" + i,
-    //     viewCount: i,
-    //     writeDate: "2020-01-01",
-    //   });
+    //for (var i = 0; i < 10; i++) {
+    // this.boardList.push({
+    //   id: i,
+    //  title: "제목" + i,
+    //   writer: "작성자" + i,
+    //   viewCount: i,
+    //   writeDate: "2020-01-01",
+    //  });
     // }
     this.axios.post("/api/board/list").then((result) => {
       console.log(result);

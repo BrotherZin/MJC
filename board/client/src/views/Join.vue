@@ -17,7 +17,7 @@
       <v-btn block @click="join">회원가입</v-btn>
     </div>
   </v-layout>
-</template>
+</template> 
 
 <script>
 export default {
@@ -55,7 +55,7 @@ export default {
         console.log(result);
         if (result.data.result == "ok") {
           //회원가입이 성공한경우
-          window.alert("회원가입이 완료되었습니다");
+          window.alert("회원가입이 완료되었습니다.");
           this.$router.push("/");
         }
         if (result.data.result == "fail") {
@@ -68,6 +68,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .background {
   background: #eeeeee;
@@ -78,3 +79,5 @@ export default {
   border-radius: 10px;
 }
 </style>
+
+

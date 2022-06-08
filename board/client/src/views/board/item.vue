@@ -14,7 +14,7 @@
 
       <div class="text-center">
         <v-btn color="primary" @click="modifyBoard">수정</v-btn>
-        <v-btn color="error" @click="removeBoard">삭제</v-btn>
+        <v-btn color="error" @click="removeBoard">삭제 </v-btn>
       </div>
     </div>
   </div>
@@ -64,5 +64,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.root {
+  width: 700px;
+  margin: 0 auto;
+}
 </style>
