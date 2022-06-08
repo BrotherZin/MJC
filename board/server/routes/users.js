@@ -17,7 +17,7 @@ router.post("/join", async function (req, res) {
   if (alreadyUser != null) {
     res.json({
       result: "fail",
-      message: "이미 존재하는 계정입니다."
+      message: "이미 존재하는 아이디입니다."
     })
     return
   }
@@ -47,10 +47,8 @@ router.post("/login", async function (req, res) {
   res.json({
     result: "ok"
   })
+
+
 })
-
-
-// test 
-
 
 module.exports = router;

@@ -19,8 +19,8 @@ export default {
   },
   methods: {
     btnClick() {
-      this.$emit("click", this.background);
       this.$emit("changeBackground", "#ffff00");
+      this.$emit("click", this.background);
     },
   },
 };
@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .mjc-btn {
   padding: 5px 10px;
-  background: #eee;
+
   border-radius: 10px;
   font-size: 16px;
   text-align: center;

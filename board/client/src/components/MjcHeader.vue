@@ -1,12 +1,10 @@
 <template>
   <div class="header">
-    <v-layout
-      ><div class="logo" @click="moveMain">
-        이랏샤이마세 ~ 고레와 안형진 게시판 데스 !
-      </div>
+    <v-layout>
+      <div class="logo" @click="moveMain">Mjc Board</div>
       <v-spacer></v-spacer>
-      <div>안형진</div></v-layout
-    >
+      <div>진용화</div>
+    </v-layout>
   </div>
 </template>
 
@@ -23,7 +21,7 @@ export default {
 <style scoped>
 .header {
   padding: 10px 20px;
-  box-shadow: 0 6px #eee;
+  box-shadow: 0 6px 6px #eee;
 }
 .header .logo {
   cursor: pointer;

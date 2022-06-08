@@ -42,24 +42,24 @@ export default {
         return;
       }
       if (this.form.password.length < 8) {
-        window.alert("패스워드는 8자 이상이여야 합니다.");
+        window.alert("패스워드는 8자 이상이어야 합니다");
         return;
       }
       if (this.form.password != this.form.passwordConfirm) {
-        window.alert("패스워드가 일치하지 않습니다.");
+        window.alert("패스워드가 일치하지 않습니다");
         return;
       }
 
-      //TODO : 서버에 전송해서 회원가입 시키기
+      // TODO : 서버에 전송해서 회원가입 시키기
       this.axios.post("/api/users/join", this.form).then((result) => {
         console.log(result);
         if (result.data.result == "ok") {
-          // 회원가입이 성공한 경우
-          window.alert("회원가입이 완료되었습니다.");
+          //회원가입이 성공한경우
+          window.alert("회원가입이 완료되었습니다");
           this.$router.push("/");
         }
         if (result.data.result == "fail") {
-          //회원가입이 실패한 경우
+          //회원가입이 실패한경우
           window.alert(result.data.message);
         }
       });
@@ -68,5 +68,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.background {
+  background: #eeeeee;
+}
+.background .form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
 </style>
