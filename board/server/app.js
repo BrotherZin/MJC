@@ -11,9 +11,9 @@ var options = {
   port: 3306,
   user: 'root',
   password: 'itc801',
-  database: 'board'
+  database: 'board',
+  dbtype: "mariadb",
 };
-
 var sessionStore = new MysqlStore(options)
 
 
@@ -21,10 +21,15 @@ var sessionStore = new MysqlStore(options)
 const { Sequelize } = require('sequelize');
 global.sequelize = new Sequelize('board', 'root', 'itc801', {
   host: 'localhost',
-  dialect: "mysql"
+  dialect: "mysql",
+  logging: false
 });
 
 require("./model.js")
+
+
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -33,28 +38,31 @@ var boardRouter = require('./routes/board');
 var app = express();
 
 app.use(session({
-  key: 'session_cookie_name',
-  secret: 'session_cookie_secret',
+  key: 'session_key',
+  secret: 'sdafsdasdfasdfas',
   store: sessionStore,
   resave: false,
   saveUninitialized: false
 }));
 
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+console.log(path.join(__dirname, "../client/dist"))
+console.log(__filename)
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/board', boardRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

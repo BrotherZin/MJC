@@ -47,7 +47,7 @@ export default {
         return;
       }
 
-      //TODO: 서버에 전송해서 글쓰기 시키기
+      // TODO : 서버에 전송해서 게시글 수정하기
       this.axios.post("/api/board/modify", this.form).then((result) => {
         if (result.data.result == "ok") {
           window.alert("글이 수정되었습니다.");

@@ -11,6 +11,7 @@ global.User = sequelize.define("User", {
     password: {
         type: Sequelize.STRING
     }
+
 })
 global.Board = sequelize.define("Board", {
     id: {
@@ -38,6 +39,8 @@ Board.belongsTo(User, {
     foreignKey: "userId",
     as: "writeUser"
 })
+
+
 sequelize.sync({
     alter: true
 })

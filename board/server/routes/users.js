@@ -31,6 +31,7 @@ router.post("/join", async function (req, res) {
 router.post("/login", async function (req, res) {
   console.log(req.body)
   var user = await User.findOne({
+    attributes: ["id", "name"],
     where: {
       id: req.body.id,
       password: req.body.password
@@ -45,8 +46,34 @@ router.post("/login", async function (req, res) {
   }
   req.session.user = user
   res.json({
+    result: "ok",
+    user: user
+  })
+
+
+})
+
+router.post('/info', async (req, res) => {
+  if (req.session.user) {
+    res.json({
+      result: "ok",
+      user: req.session.user
+    })
+  }
+  else {
+    res.json({
+      result: "fail"
+    })
+  }
+})
+
+
+router.post('/logout', async (req, res) => {
+  req.session.destroy()
+  res.json({
     result: "ok"
   })
 })
+
 
 module.exports = router;

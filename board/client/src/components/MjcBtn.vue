@@ -19,8 +19,8 @@ export default {
   },
   methods: {
     btnClick() {
-      this.$emit("click", this.background);
       this.$emit("changeBackground", "#ffff00");
+      this.$emit("click", this.background);
     },
   },
 };

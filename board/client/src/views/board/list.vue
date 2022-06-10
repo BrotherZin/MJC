@@ -19,7 +19,7 @@
             @click="clickBoardItem(board)"
           >
             <td class="text-center">{{ board.id }}</td>
-            <td>{{ board.title }}</td>
+            <td class="text-center">{{ board.title }}</td>
             <td class="text-center">
               <div v-if="board.writeUser">
                 {{ board.writeUser.name }}
@@ -39,7 +39,9 @@
     ></v-pagination>
 
     <div class="text-right mt-2">
-      <v-btn color="primary" @click="moveWrite">글쓰기</v-btn>
+      <v-btn v-if="$store.state.user" color="primary" @click="moveWrite"
+        >글쓰기</v-btn
+      >
     </div>
   </div>
 </template>
@@ -66,14 +68,14 @@ export default {
   },
   mounted() {
     //TODO : 서버에서 게시물 목록 가져와서 넣기
-    //for (var i = 0; i < 10; i++) {
-    // this.boardList.push({
-    //   id: i,
-    //  title: "제목" + i,
-    //   writer: "작성자" + i,
-    //   viewCount: i,
-    //   writeDate: "2020-01-01",
-    //  });
+    // for (var i = 0; i < 10; i++) {
+    //   this.boardList.push({
+    //     id: i,
+    //     title: "제목" + i,
+    //     writer: "작성자" + i,
+    //     viewCount: i,
+    //     writeDate: "2020-01-01",
+    //   });
     // }
     this.axios.post("/api/board/list").then((result) => {
       console.log(result);
