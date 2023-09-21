@@ -8,13 +8,14 @@
       <div class="writer" v-if="board.writeUser">
         작성자 : {{ board.writeUser.name }}
       </div>
+      <br />
       <div class="body">
         {{ board.body }}
       </div>
 
       <div class="text-center">
         <v-btn color="primary" @click="modifyBoard">수정</v-btn>
-        <v-btn color="error" @click="removeBoard">삭제</v-btn>
+        <v-btn class="ml-4" color="error" @click="removeBoard">삭제</v-btn>
       </div>
     </div>
   </div>
@@ -46,6 +47,7 @@ export default {
         })
         .then((result) => {
           if (result.data.result == "ok") {
+            window.alert("글이 삭제되었습니다.");
             this.$router.push("/board");
           } else {
             alert(result.data.msg);

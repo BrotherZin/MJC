@@ -7,6 +7,7 @@
       <v-textarea v-model="form.body" label="내용"></v-textarea>
       <div class="text-center">
         <v-btn color="primary" @click="submit">글쓰기</v-btn>
+        <v-btn class="ml-4" color="error" @click="cancle">취소</v-btn>
       </div>
     </div>
   </div>
@@ -44,6 +45,9 @@ export default {
           this.$router.go(-1);
         }
       });
+    },
+    cancle() {
+      this.$router.go(-1);
     },
   },
 };

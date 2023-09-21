@@ -8,9 +8,6 @@
         label="password"
       ></v-text-field>
 
-      <!--
-      <v-btn class="mr-2" @click="login">로그인</v-btn>
-      -->
       <mjc-btn
         :background="loginbtnBg"
         fontcolor="white"
@@ -27,13 +24,11 @@
       >
         회원가입
       </mjc-btn>
-      <!--<v-btn @click="moveJoin">회원가입</v-btn>-->
     </div>
   </v-layout>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
 import MjcBtn from "@/components/MjcBtn";
 
 export default {
@@ -76,8 +71,6 @@ export default {
           window.alert(result.data.message);
         }
       });
-
-      //this.$router.push("/board");
     },
     moveJoin() {
       this.$router.push("/join");
